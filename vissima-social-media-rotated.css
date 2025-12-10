@@ -1,0 +1,1169 @@
+:root {
+  --font-family-var: "Roboto-Bold", Helvetica, sans-serif;
+  --border-width-var: 1px;
+  --border-style-var: solid;
+  --border-color-var: rgba(0, 0, 0, 0);
+  --border-var: var(--border-width-var) var(--border-style-var)
+    var(--border-color-var);
+  --padding-block-inline-var: 5px 5px;
+  --margin-top-left-bottom-right-var: 5px 5px 5px 5px;
+}
+
+@font-face {
+  font-family: var(--font-family-var);
+  src: local("/Roboto/Roboto-Bold.woff2") url("Roboto/Roboto-Bold.woff2")
+    format("woff2");
+  font-weight: normal, bold;
+  font-style: normal;
+  font-display: swap;
+  font-variant: normal;
+}
+
+* {
+  font-family: var(--font-family-var);
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family-var);
+  background: rgba(0, 0, 0, 0);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden hidden;
+  margin: 0;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.discord-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dc-bg-img-container {
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.discord-background-container {
+  background: rgb(0, 0, 0);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.discord-img-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 310px;
+  height: 310px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.discord-img {
+  background: rgba(0, 0, 0, 0);
+  width: 300px;
+  max-width: 300px;
+  height: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.dc-server-name-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 59.5%;
+  transform: translate(-50%, -50%);
+  width: 1220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.discord-server-name {
+  background: rgba(0, 0, 0, 0);
+  width: 1200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  text-align: center;
+  font-size: 150px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.instagram-main-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.insta-img-bg-container {
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.instagram-background-container {
+  background: rgb(0, 0, 0);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.instagram-img-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 310px;
+  height: 310px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.instagram-img {
+  background: rgba(0, 0, 0, 0);
+  width: 300px;
+  max-width: 300px;
+  height: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.instagram-name-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 59.5%;
+  transform: translate(-50%, -50%);
+  width: 1220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.instagram-name {
+  background: rgba(0, 0, 0, 0);
+  width: 1200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  text-align: center;
+  font-size: 150px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.spotify-main-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.spotify-img-bg-container {
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.spotify-background-container {
+  background: rgb(0, 0, 0);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.spotify-img-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 310px;
+  height: 310px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.spotify-img {
+  background: rgba(0, 0, 0, 0);
+  width: 300px;
+  max-width: 300px;
+  height: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.spotify-name-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 59.5%;
+  transform: translate(-50%, -50%);
+  width: 1220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spotify-name {
+  background: rgba(0, 0, 0, 0);
+  width: 1200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  text-align: center;
+  font-size: 150px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.tiktok-main-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tiktok-img-bg-container {
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.tiktok-background-container {
+  background: rgb(0, 0, 0);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.tiktok-img-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 310px;
+  height: 310px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.tiktok-img {
+  background: rgba(0, 0, 0, 0);
+  width: 300px;
+  max-width: 300px;
+  height: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.tiktok-name-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 59.5%;
+  transform: translate(-50%, -50%);
+  width: 1220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tiktok-name {
+  background: rgba(0, 0, 0, 0);
+  width: 1200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  text-align: center;
+  font-size: 150px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.twitter-main-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.twitter-img-bg-container {
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.twitter-background-container {
+  background: rgb(0, 0, 0);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.twitter-img-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.twitter-img {
+  background: rgba(0, 0, 0, 0);
+  width: 300px;
+  max-width: 300px;
+  height: 300px;
+  max-height: 300px;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.twitter-name-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+  width: 1320px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.twitter-name {
+  background: rgba(0, 0, 0, 0);
+  width: 1300px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  text-align: center;
+  font-size: 150px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.youtube-main-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 14%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.youtube-img-bg-container {
+  background: rgba(0, 0, 0, 0);
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.youtube-background-container {
+  background: rgb(0, 0, 0);
+  width: 400px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.youtube-img-background-container {
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.youtube-img-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 310px;
+  height: 310px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.youtube-img {
+  background: rgba(0, 0, 0, 0);
+  width: 300px;
+  max-width: 300px;
+  height: 300px;
+  max-height: 300px;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  border-radius: 50%;
+  clip-path: circle(50% at 50% 50%);
+  padding: 0px 0px;
+  margin: 1.5px 1.5px 1.5px 1.5px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.youtube-name-container {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 59.5%;
+  transform: translate(-50%, -50%);
+  width: 1220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.youtube-name {
+  background: rgba(0, 0, 0, 0);
+  width: 1200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+  border: var(--border-var);
+  padding: var(--padding-block-inline-var);
+  margin: var(--margin-top-left-bottom-right-var);
+  text-align: center;
+  font-size: 150px;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.slide-in-img {
+  animation: img-slide-in 4s ease-in-out forwards;
+  transition: animation 4s ease-in-out;
+}
+
+@keyframes img-slide-in {
+  0% {
+    transform: translateX(-1100px) rotate(-360deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.slide-out-img {
+  animation: img-slide-out 4s ease-in-out forwards;
+  transition: animation 4s ease-in-out;
+}
+
+@keyframes img-slide-out {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-1100px) rotate(-360deg);
+    opacity: 0;
+  }
+}
+
+.slide-in-name {
+  animation: name-slide-in 1.8s ease-in-out forwards;
+  transition: animation 1.8s ease-in-out;
+}
+
+@keyframes name-slide-in {
+  0% {
+    transform: translateX(-1100px);
+    opacity: 0;
+  }
+
+  65% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+.slide-out-name {
+  animation: name-slide-out 1.8s ease-in-out forwards;
+  transition: animation 1.8s ease-in-out;
+}
+
+@keyframes name-slide-out {
+  0% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+
+  65% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(-1100px);
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fade-in 1.5s ease-in-out forwards;
+  transition: animation 1.5s ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fade-out 1.5s ease-in-out forwards;
+  transition: animation 1.5s ease-in-out;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.underline-slide-in {
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.underline-slide-in::after {
+  content: "";
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  animation: slide-in-underline 2s ease-in-out forwards;
+  transition: animation 2s ease-in-out;
+}
+
+@keyframes slide-in-underline {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.underline-slide-out {
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+}
+
+.underline-slide-out::after {
+  content: "";
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: center;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  pointer-events: none;
+  animation: slide-out-underline 2s ease-in-out forwards;
+  transition: animation 2s ease-in-out;
+}
+
+@keyframes slide-out-underline {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
