@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const restartMs = 200;
     const WAIT_CHUNK = 50;
     const PRELOAD_TIMEOUT = 500;
-    const ANIM_MS = 2000;
+    const ANIM_MS = 4000;
     const VISIBLE_MS = Math.max(DISPLAY_STAY, ANIM_MS);
 
     function bodySecurityToken() {
@@ -153,7 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       mainDiv.forEach((el) => {
         if (!el) return;
-
         el.style.zIndex = 1;
       });
 
@@ -168,7 +167,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       nameDiv.forEach((el) => {
         if (!el) return;
-
         el.style.zIndex = 0;
       });
     }
@@ -184,6 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const colorRandomToken = () => {
         let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+        randomColor = randomColor.padStart(6, "0");
 
         const nameColorEl = [
           discordServerName,
@@ -196,10 +195,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         nameColorEl.forEach((el) => {
           if (!el) return;
-
           el.style.color = `#${randomColor}`;
           el.style.transition =
             "color 2s cubic-bezier(0.445, 0.05, 0.55, 0.95)";
+          el.style.textShadow = "1px 1px 1px rgb(0, 0, 0)";
         });
 
         const cssUnderline = `
@@ -209,7 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
         user-select: none;
         cursor: default;
         pointer-events: none;
-      } 
+      }
 
       .underline-slide-in::after {
         content: "";
@@ -221,24 +220,22 @@ document.addEventListener("DOMContentLoaded", () => {
         height: 2px;
         transform: scaleX(0);
         transform-origin: center;
-        border-radius: 5px;
+        border: 0.2px solid rgb(0, 0, 0);
+        border-radius: 10px;
+        padding: 0px 0px;
+        margin: 0px 0px 0px 0px;
         -webkit-user-select: none;
         user-select: none;
         cursor: default;
         pointer-events: none;
         animation: slide-in-underline 2s ease-in-out forwards;
         transition: animation 2s ease-in-out, background-color 2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-      } 
+      }
 
       @keyframes slide-in-underline {
-        0% {
-          transform: scaleX(0);
-        } 
-
-        100% {
-          transform: scaleX(1);
-        }
-      } 
+        0% { transform: scaleX(0); }
+        100% { transform: scaleX(1); }
+      }
 
       .underline-slide-out {
         position: relative;
@@ -246,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
         user-select: none;
         cursor: default;
         pointer-events: none;
-      } 
+      }
 
       .underline-slide-out::after {
         content: "";
@@ -256,9 +253,12 @@ document.addEventListener("DOMContentLoaded", () => {
         bottom: 0;
         width: 100%;
         height: 2px;
-        transform: scaleX(0);
+        transform: scaleX(1);
         transform-origin: center;
-        border-radius: 5px;
+        border: 0.2px solid rgb(0, 0, 0);
+        border-radius: 10px;
+        padding: 0px 0px;
+        margin: 0px 0px 0px 0px;
         -webkit-user-select: none;
         user-select: none;
         cursor: default;
@@ -268,22 +268,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       @keyframes slide-out-underline {
-        0% {
-          transform: scale(1);
-        } 
-
-        100% {
-          transform: scaleX(0);
-        }
+        0% { transform: scaleX(1); }
+        100% { transform: scaleX(0); }
       }
       `;
 
         const style = document.querySelector("style");
-        style.innerHTML = cssUnderline;
-        if (!style) console.warn("HTML-Style Tag ist nicht da.");
+        if (style) {
+          style.innerHTML = cssUnderline;
+        } else {
+          console.warn("HTML-Style Tag ist nicht da.");
+        }
       };
-      colorRandomToken();
 
+      colorRandomToken();
       setInterval(colorRandomToken, 1000);
     }
     randomColorToken();
@@ -370,7 +368,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
       );
 
-    function waitAnimationEnd(el, timeout = ANIM_MS + 750) {
+    function waitAnimationEnd(el, timeout = 4500) {
       return new Promise((resolve) => {
         if (!el) return resolve();
         let done = false;
@@ -422,16 +420,21 @@ document.addEventListener("DOMContentLoaded", () => {
         if (imgClass) safeAdd(imgDiv, imgClass);
       }
 
-      await (imgDiv ? waitAnimationEnd(imgDiv) : Promise.resolve());
+      await (imgDiv
+        ? waitAnimationEnd(imgDiv, imgClass === "slide-in-img" ? 4500 : 2000)
+        : Promise.resolve());
+
+      if (imgDiv && imgClass) safeRem(imgDiv, imgClass);
 
       if (nameEl) {
         nameEl.style.opacity = one;
         if (nameClass) safeAdd(nameEl, nameClass);
       }
 
-      await (nameEl ? waitAnimationEnd(nameEl) : Promise.resolve());
+      await (nameEl
+        ? waitAnimationEnd(nameEl, nameClass === "slide-in-name" ? 2300 : 2000)
+        : Promise.resolve());
 
-      if (imgDiv && imgClass) safeRem(imgDiv, imgClass);
       if (nameEl && nameClass) safeRem(nameEl, nameClass);
     }
 
@@ -449,9 +452,12 @@ document.addEventListener("DOMContentLoaded", () => {
       if (imgDiv && imgOutClass) safeAdd(imgDiv, imgOutClass);
       if (nameEl && nameOutClass) safeAdd(nameEl, nameOutClass);
 
+      const imgTimeout = imgOutClass === "slide-out-img" ? 4500 : 2000;
+      const nameTimeout = nameOutClass === "slide-out-name" ? 2300 : 2000;
+
       await Promise.all([
-        imgDiv ? waitAnimationEnd(imgDiv) : Promise.resolve(),
-        nameEl ? waitAnimationEnd(nameEl) : Promise.resolve(),
+        imgDiv ? waitAnimationEnd(imgDiv, imgTimeout) : Promise.resolve(),
+        nameEl ? waitAnimationEnd(nameEl, nameTimeout) : Promise.resolve(),
       ]);
 
       if (imgDiv) {
@@ -563,7 +569,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (step.name) {
           safeAdd(step.name, "underline-slide-in");
-          await waitAnimationEnd(step.name);
+          await waitAnimationEnd(step.name, 2500);
         }
 
         if (!(await waitGuard(VISIBLE_MS))) return false;
@@ -571,7 +577,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (step.name) {
           safeRem(step.name, "underline-slide-in");
           safeAdd(step.name, "underline-slide-out");
-          await waitAnimationEnd(step.name);
+          await waitAnimationEnd(step.name, 2500);
           safeRem(step.name, "underline-slide-out");
         }
 
@@ -656,17 +662,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     console.log(
-      "Social Media Rotator geladen!\n\n" +
+      "🎨 Social Media Rotator geladen!\n\n" +
         "URL Parameter:\n" +
-        "/?autoplay=true (oder false)\n" +
-        "&delay=0 (Minuten bis Start)\n" +
-        "&duration=5 (Sekunden pro Element)\n\n" +
+        "  /?autoplay=true (oder false)\n" +
+        "  &delay=0 (Minuten bis Start)\n" +
+        "  &duration=5 (Sekunden pro Element)\n\n" +
         "Manuelle Steuerung:\n" +
-        "' window.__socialRotator.start(); '\n" +
-        "' window.__socialRotator.stop(); '\n" +
-        "' window.__socialRotator.restart(); '"
+        " ' window.__socialRotator.start(); '\n" +
+        " ' window.__socialRotator.stop(); '\n" +
+        " ' window.__socialRotator.restart(); '\n\n" +
+        "✨ Features: Random Color, Z-Index, Smooth Animations"
     );
   } catch (error) {
-    console.error("Fehler beim Script:", error);
+    console.error("❌ Fehler beim Script:", error);
   }
 });
